@@ -12,6 +12,7 @@ test:
   pre:
     - ls -lha
   override:
-    - parallel: true
-    - sleep 10; echo "yay"
-    - sleep 10; echo "no"
+    - sleep 10; echo "yay":
+        - parallel: true
+    - sleep 10; echo "no":
+        - parallel: true
