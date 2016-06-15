@@ -6,7 +6,7 @@ echo 0 > $BUILD_DONE
 if [[ ${CIRCLE_NODE_INDEX} == 0 ]]
 then
   echo "foo" > build/bar
-  for i in $(seq 1 $((CIRCLE_NODE_TOTAL)))
+  for i in $(seq 1 $((CIRCLE_NODE_TOTAL - 1)))
   do
     ssh node${i} echo 1 > build_done${i}
   done
