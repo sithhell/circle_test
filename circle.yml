@@ -8,7 +8,7 @@ dependencies:
   pre:
     - sudo apt-get update; sudo apt-get install clang-3.5 libboost-all-dev
 
-tests:
+test:
   pre:
     - ls -lha
   override:
