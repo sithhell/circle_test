@@ -13,7 +13,7 @@ test:
     - mkdir build
     - if [[ $CIRCLE_NODE_INDEX != 0 ]]; then sshfs node0:/build build; fi
   override:
-    - bash build_core.sh:
+    - bash -x build_core.sh:
         parallel: true
     - cat build/bar:
         parallel: true
