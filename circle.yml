@@ -8,7 +8,7 @@ dependencies:
   pre:
     - sudo mkdir -p /blubb
     - sudo touch /blubb/bar
-    - sudo chmod 775 /blubb/bar
+    - sudo chmod o+rw /blubb/bar
     - echo "foo" > /blubb/bar
     - echo ${CIRCLE_NODE_INDEX}
     - pwd
