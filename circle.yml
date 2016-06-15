@@ -6,16 +6,12 @@
 
 dependencies:
   pre:
-    - sudo mkdir -p /blubb
-    - sudo touch /blubb/bar
-    - sudo chmod o+rw /blubb/bar
-    - echo "foo" > /blubb/bar
-    - echo ${CIRCLE_NODE_INDEX}
-    - pwd
+    - ls -lah
+    - echo "foo" > bar
 
 test:
   pre:
     - pwd
   override:
-    - cat /blubb/bar:
+    - cat bar:
         parallel: true
