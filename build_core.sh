@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo 0 > build_done${CIRCLE_NODE_INDEX}
+BUILD_DONE=build_done${CIRCLE_NODE_INDEX}
+echo 0 > $BUILD_DONE
 
-if [ ${CIRCLE_NODE_INDEX} == 0 ]
+if [[ ${CIRCLE_NODE_INDEX} == 0 ]]
 then
   echo "foo" > build/bar
   for i in $(seq 1 $((CIRCLE_NODE_TOTAL)))
@@ -10,10 +11,10 @@ then
     ssh node${i} echo 1 > build_done${i}
   done
 else
-  DONE=$(cat build_done${CIRCLE_NODE_INDEX})
-  while [[ $DONE != 1 ]]
+  DONE=$(cat $BUILD_DONE)
+  while [ $DONE != 1 ]
   do
-    inotifywait build_done${CIRCLE_NODE_INDEX}
-    DONE=$(cat build_done${CIRCLE_NODE_INDEX})
+    inotifywait $BUILD_DONE
+    DONE=$(cat $BUILD_DONE)
   done
 fi
