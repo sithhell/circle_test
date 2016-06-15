@@ -6,7 +6,6 @@
 
 dependencies:
   pre:
-    - sudo apt-get update; sudo apt-get install clang-3.5 libboost-all-dev
     - mkdir -p /blubb
     - echo "foo" > /blubb/bar
     - echo ${CIRCLE_NODE_INDEX}
