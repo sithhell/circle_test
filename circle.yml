@@ -6,12 +6,16 @@
 
 dependencies:
   pre:
+    - sudo apt-get install inotify-tools
     - ls -lah
     - echo "foo" > bar
+    - 
 
 test:
   pre:
-    - pwd
+    - mkdir build
   override:
-    - cat bar:
+    - sh build_core.sh:
+        parallel: true
+    - cat build/bar:
         parallel: true
