@@ -6,7 +6,7 @@
 
 dependencies:
   pre:
-    - sudo apt-get install inotify-tools
+    - sudo apt-get install inotify-tools sshfs
     - ls -lah
     - echo "foo" > bar
     - 
