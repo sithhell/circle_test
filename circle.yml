@@ -7,12 +7,12 @@
 dependencies:
   pre:
     - sudo apt-get update; sudo apt-get install clang-3.5 libboost-all-dev
+    - mkdir -p /blubb
+    - echo "foo" > /blubb/bar
 
 test:
   pre:
     - ls -lha
   override:
-    - sleep 10; echo "yay":
-        parallel: true
-    - sleep 10; echo "no":
+    - cat /blubb/bar:
         parallel: true
