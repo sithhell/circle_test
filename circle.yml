@@ -12,5 +12,6 @@ test:
   pre:
     - ls -lha
   override:
-    - echo "yay"
-    - echo "no"
+    - parallel: true
+    - sleep 10; echo "yay"
+    - sleep 10; echo "no"
