@@ -14,6 +14,7 @@ dependencies:
 test:
   pre:
     - mkdir build
+    - if [[ $CIRCLE_NODE_INDEX != 0 ]]; then sshfs node0:/build build; fi
   override:
     - sh build_core.sh:
         parallel: true
