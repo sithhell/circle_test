@@ -13,6 +13,6 @@ test:
     - ls -lha
   override:
     - sleep 10; echo "yay":
-        - parallel: true
+        parallel: true
     - sleep 10; echo "no":
-        - parallel: true
+        parallel: true
