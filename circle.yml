@@ -6,7 +6,8 @@
 
 dependencies:
   pre:
-    - mkdir -p /blubb
+    - sudo mkdir -p /blubb
+    - sudo chmod 775 /blubb
     - echo "foo" > /blubb/bar
     - echo ${CIRCLE_NODE_INDEX}
 
